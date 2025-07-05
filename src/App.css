@@ -1,38 +1,71 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.title{
+  margin-top: 100px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.products-con{
+  max-width: 70%;
+  max-height: 50%;
+  margin: auto;
+  background-color: beige;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  padding: 20px;
+}
+.products{
+  height: 80%;
+  width: 30%;
+  background-color: aqua;
+  margin: 10px;
+  
+}
+.img{
+  width: 12.5rem;
+  height: 12.5rem;;
+  border-radius: 25px;
+}
+.prev{
+  left: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 40px;
+}
+.next{
+  right: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 40px;
+}
+.color-btn{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin: 2px;
+}
+.gold{
+  background-color: #E6CA97;
+}
+.white{
+  background-color: #D9D9D9;
+}
+.rose{
+  background-color: #E1A4A9;
 }

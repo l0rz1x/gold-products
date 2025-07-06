@@ -1,20 +1,31 @@
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import StarRating from "./components/starRating";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./App.css";
 import products from "./products.json";
 
 function App() {
   const containerRef = useRef(null); // ne icin kullanildigini anla
+  const [productWidth, setProductWidth] = useState(0);
+
+  useEffect(() => {
+    if (containerRef.current && containerRef.current.firstChild) {
+      setProductWidth(containerRef.current.firstChild.offsetWidth + 16);
+    }
+  }, [products]);
 
   const scrollLeft = () => {
-    const width = containerRef.current.offsetWidth;
-    containerRef.current.scrollBy({ left: -width * 0.265, behavior: "smooth" });
+    containerRef.current.scrollBy({
+      left: -productWidth * 1.36,
+      behavior: "smooth",
+    });
   };
 
   const scrollRight = () => {
-    const width = containerRef.current.offsetWidth;
-    containerRef.current.scrollBy({ left: width * 0.265, behavior: "smooth" });
+    containerRef.current.scrollBy({
+      left: productWidth * 1.36,
+      behavior: "smooth",
+    });
   };
 
   const colorOptions = ["yellow", "white", "rose"];

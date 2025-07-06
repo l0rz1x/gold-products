@@ -119,3 +119,68 @@
   margin-bottom: 10px;
 }
 }
+@media (max-width: 800px) { 
+  .products{
+  height: 80%;
+  min-width: 40%;
+  background-color: transparent;
+  margin: 10px;
+  text-align: left;
+}
+ .img{
+  width: 12.5rem;
+  height: 12.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+@media (max-width: 700px) { 
+  .products{
+  height: 80%;
+  min-width: 35%;
+  background-color: transparent;
+  margin: 10px;
+  text-align: left;
+}
+ .img{
+  width: 9.5rem;
+  height: 9.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+@media (max-width: 600px) { 
+  .products{
+  height: 80%;
+  min-width: 30%;
+  background-color: transparent;
+  margin: 10px;
+  text-align: left;
+}
+ .img{
+  width: 10.5rem;
+  height: 10.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+@media (max-width: 550px) { 
+  .products{
+  height: 80%;
+  min-width: 60%;
+  background-color: transparent;
+  margin: 10px;
+  margin-left: 17vw;
+  text-align: left;
+}
+ .img{
+  width: 12.5rem;
+  height: 12.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}

@@ -82,7 +82,7 @@ function App() {
                       backgroundColor: color,
                       border:
                         (selected[index] || "yellow") === color
-                          ? "3px solid black"
+                          ? "1px solid black"
                           : "1px solid #ccc",
                       cursor: "pointer",
                       margin: "5px",

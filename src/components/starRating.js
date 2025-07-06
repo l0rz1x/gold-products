@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 const StarRating = ({ rating }) => {
   const totalStars = 5;
@@ -38,6 +39,7 @@ const StarRating = ({ rating }) => {
           display: "inline-block",
           padding: "10px",
           margin: 0,
+          fontFamily: "avenir-book",
         }}
       >
         {scaledRating.toFixed(1)}/5

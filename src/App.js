@@ -6,7 +6,7 @@ import products from './products.json'
 
 
 function App() {
-  const [selected, setSelected] = useState("");
+  
   const containerRef = useRef(null);// ne icin kullanildigini anla
  // font kullanimini ogren cok onemli
   const scrollLeft = () => {
@@ -18,6 +18,15 @@ function App() {
     const width = containerRef.current.offsetWidth;
     containerRef.current.scrollBy({ left: width * 0.265 , behavior: 'smooth' });
   };
+
+  const colorOptions = ["yellow","white","rose"];
+  const [selected, setSelected] = useState({});
+  const handleColorChange = (productIndex, color) => {
+    setSelected((prev) => ({
+      ...prev,
+      [productIndex]: color
+    }));
+  }
   return (
     <div className="App">
       {/* the page title field */}
@@ -27,13 +36,20 @@ function App() {
       {/* a product container to displat products */}
       <div className='products-con' ref={containerRef}>
         {products.map((item, index) => {
-          const price = (item.popularityScore + 1) * item.weight * 107.294;
-        return(
+          const price = (item.popularityScore + 1) * item.weight * 107.294;//popularity score + 1 * weight * price of gold in US 
+          const selectedColor = selected[index] || "yellow";
+          const imageSrc = item.images[selectedColor];
+          return(
         <div className='products'
         key={index}
         >
         <div className='img-Con'>
-        <img className='img' src={item.images.yellow} />
+        <img
+              className="img"
+              src={imageSrc}
+              alt={`${item.name} - ${selectedColor}`}
+              
+            />
         </div>
         <div className='prdct-title-con'>
           <p className='prdct-Name'>{item.name}</p>
@@ -44,14 +60,34 @@ function App() {
             </p> 
         </div>
         <div className='prdct-color-con'>
-          <button className="gold color-btn" onClick={() => console.log("gold")}></button>
+           {colorOptions.map((color) => (
+              <button
+                key={color}
+                className={`color-btn ${color}`}
+                onClick={() => handleColorChange(index, color)}
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  borderRadius: '50%',
+                  backgroundColor: color,
+                  border:
+                    (selected[index] || "yellow") === color
+                      ? '3px solid black'
+                      : '1px solid #ccc',
+                  cursor: 'pointer',
+                }}
+              />
+
+              
+            ))}
+          
+          {/* add here a choisable color options <button className="gold color-btn" onClick={() => console.log("gold")}></button>
           <button className="white color-btn" onClick={() => console.log("white")}></button>
-          <button className="rose color-btn" onClick={() => console.log("rose")}></button>
-          {/* add here a choisable color options */}
+          <button className="rose color-btn" onClick={() => console.log("rose")}></button>*/}
         </div>
-        <div className='prdct-color-name-con'>
-          <p className='prdct-color-name'>yellow gold</p>
-        </div>
+        
+          <p>{selectedColor} Gold</p>
+        
         <div className='prdct-rating-con'>
           {/* add here a star rating system */}
           {/* find how to do a good rating system */}

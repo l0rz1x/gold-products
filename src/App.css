@@ -28,6 +28,7 @@
   width: 12.5rem;
   height: 12.5rem;;
   border-radius: 25px;
+  object-fit: cover;
 }
 .prev{
   left: 100px;

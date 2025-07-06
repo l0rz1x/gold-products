@@ -6,7 +6,7 @@ import products from "./products.json";
 
 function App() {
   const containerRef = useRef(null); // ne icin kullanildigini anla
-  // font kullanimini ogren cok onemli
+
   const scrollLeft = () => {
     const width = containerRef.current.offsetWidth;
     containerRef.current.scrollBy({ left: -width * 0.265, behavior: "smooth" });
@@ -47,14 +47,17 @@ function App() {
                   alt={`${item.name} - ${selectedColor}`}
                 />
               </div>
-              <div className="prdct-title-con">
-                <p className="prdct-Name">{item.name}</p>
-              </div>
-              <div className="prdct-price-con">
-                <p className="prdct-price">
-                  {price.toFixed(2)}${/* calculate the prive as they provide */}
-                </p>
-              </div>
+              <p
+                className="prdct-name"
+                style={{
+                  fontFamily: "",
+                }}
+              >
+                {item.name}
+              </p>
+
+              <p className="prdct-price">${price.toFixed(2)} USD</p>
+
               <div className="prdct-color-con">
                 {colorOptions.map((color) => (
                   <button
@@ -62,8 +65,8 @@ function App() {
                     className={`color-btn ${color}`}
                     onClick={() => handleColorChange(index, color)}
                     style={{
-                      width: "30px",
-                      height: "30px",
+                      width: "20px",
+                      height: "20px",
                       borderRadius: "50%",
                       backgroundColor: color,
                       border:
@@ -71,16 +74,18 @@ function App() {
                           ? "3px solid black"
                           : "1px solid #ccc",
                       cursor: "pointer",
+                      margin: "5px",
                     }}
                   />
                 ))}
               </div>
-              <p>{selectedColor} Gold</p>
+              <p className="prdct-color-name">
+                {selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1)}{" "}
+                Gold
+              </p>
 
               <div className="prdct-rating-con">
                 <StarRating rating={item.popularityScore} />
-                {/* add here a star rating system */}
-                {/* find how to do a good rating system */}
               </div>
             </div>
           );

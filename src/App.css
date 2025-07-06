@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'avenir-book';
+  src: url('./Fonts/avenir/Avenir-Book.ttf');
+}
+@font-face {
+  font-family: 'montserat-medium';
+  src: url('./Fonts/montserat/Montserrat-Medium.otf');
+}
+@font-face {
+  font-family: 'montserat-regular';
+  src: url('./Fonts/montserat/Montserrat-Regular.ttf');
+}
 .App {
   text-align: center;
   justify-content: center;
@@ -5,13 +17,15 @@
 }
 .title{
   margin-top: 100px;
+  font-family: 'avenir-book';
 }
 .products-con{
   max-width: 70%;
   max-height: 50%;
   margin: auto;
-  background-color: beige;
+  background-color: transparent;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   display: flex;
   flex-direction: row;
   gap: 70px;
@@ -20,46 +34,40 @@
 .products{
   height: 80%;
   width: 30%;
-  background-color: aqua;
+  background-color: transparent;
   margin: 10px;
-  
+  text-align: left;
 }
 .img{
   width: 12.5rem;
   height: 12.5rem;;
   border-radius: 25px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 .prev{
-  left: 100px;
+  left: 6vw;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background-color: transparent;
   color: black;
   border: none;
   padding: 15px;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 30px;
 }
 .next{
-  right: 100px;
+  right: 6vw;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background-color: transparent;
   color: black;
   border: none;
   padding: 15px;
   cursor: pointer;
-  font-size: 40px;
-}
-.color-btn{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: none;
-  margin: 2px;
+  font-size: 30px;
 }
 .gold{
   background-color: #E6CA97;
@@ -69,4 +77,45 @@
 }
 .rose{
   background-color: #E1A4A9;
+}
+.prdct-name,.prdct-price, .prdct-color-name, .prdct-rating-con{
+  margin: 3px;
+  
+}
+.prdct-color-name{
+  font-family: 'avenir-book';
+}
+.prdct-price{
+  font-family: 'montserat-regular';
+  margin-bottom: 10px;
+}
+.prdct-name{
+  font-family: 'montserat-medium';
+  margin-bottom: 10px;
+  
+}
+@media (max-width: 1200px) { 
+  .img{
+  width: 8.5rem;
+  height: 8.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+}
+@media (max-width: 900px) { 
+  .products{
+  height: 80%;
+  min-width: 50%;
+  background-color: transparent;
+  margin: 10px;
+  text-align: left;
+}
+ .img{
+  width: 12.5rem;
+  height: 12.5rem;;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
 }

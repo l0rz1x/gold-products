@@ -37,6 +37,7 @@ const StarRating = ({ rating }) => {
         style={{
           display: "inline-block",
           padding: "10px",
+          margin: 0,
         }}
       >
         {scaledRating.toFixed(1)}/5

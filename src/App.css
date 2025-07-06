@@ -1,193 +1,4 @@
 
-/*@font-face {
-  font-family: 'avenir-book';
-  src: url('./Fonts/avenir/Avenir-Book.ttf');
-}
-@font-face {
-  font-family: 'montserat-medium';
-  src: url('./Fonts/montserat/Montserrat-Medium.otf');
-}
-@font-face {
-  font-family: 'montserat-regular';
-  src: url('./Fonts/montserat/Montserrat-Regular.ttf');
-}
-.App {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.title{
-  margin-top: 100px;
-  font-family: 'avenir-book';
-}
-.products-con{
-  max-width: 70%;
-  max-height: 50%;
-  margin: auto;
-  background-color: transparent;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: row;
-  gap: 70px;
-  padding: 20px;
-}
-.products{
-  height: 80%;
-  width: 30%;
-  background-color: transparent;
-  margin: 10px;
-  text-align: left;
-}
-.img{
-  width: 12.5rem;
-  height: 12.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.prev{
-  left: 6vw;
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  color: black;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 30px;
-}
-.next{
-  right: 6vw;
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  color: black;
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 30px;
-}
-.gold{
-  background-color: #E6CA97;
-}
-.white{
-  background-color: #D9D9D9;
-}
-.rose{
-  background-color: #E1A4A9;
-}
-.prdct-name,.prdct-price, .prdct-color-name, .prdct-rating-con{
-  margin: 3px;
-  
-}
-.prdct-color-name{
-  font-family: 'avenir-book';
-}
-.prdct-price{
-  font-family: 'montserat-regular';
-  margin-bottom: 10px;
-}
-.prdct-name{
-  font-family: 'montserat-medium';
-  margin-bottom: 10px;
-  
-}
- */
-
-/*
-@media (max-width: 1200px) { 
-  .img{
-  width: 8.5rem;
-  height: 8.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}
-@media (max-width: 900px) { 
-  .products{
-  height: 80%;
-  min-width: 50%;
-  background-color: transparent;
-  margin: 10px;
-  text-align: left;
-}
- .img{
-  width: 12.5rem;
-  height: 12.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}
-@media (max-width: 800px) { 
-  .products{
-  height: 80%;
-  min-width: 40%;
-  background-color: transparent;
-  margin: 10px;
-  text-align: left;
-}
- .img{
-  width: 12.5rem;
-  height: 12.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}
-@media (max-width: 700px) { 
-  .products{
-  height: 80%;
-  min-width: 35%;
-  background-color: transparent;
-  margin: 10px;
-  text-align: left;
-}
- .img{
-  width: 9.5rem;
-  height: 9.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}
-@media (max-width: 600px) { 
-  .products{
-  height: 80%;
-  min-width: 30%;
-  background-color: transparent;
-  margin: 10px;
-  text-align: left;
-}
- .img{
-  width: 10.5rem;
-  height: 10.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}
-@media (max-width: 550px) { 
-  .products{
-  height: 80%;
-  min-width: 60%;
-  background-color: transparent;
-  margin: 10px;
-  margin-left: 17vw;
-  text-align: left;
-}
- .img{
-  width: 12.5rem;
-  height: 12.5rem;;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-}*/
 @font-face {
   font-family: 'avenir-book';
   src: url('./Fonts/avenir/Avenir-Book.ttf');
@@ -206,7 +17,7 @@
   align-items: center;
 }
 .title{
-  margin-top: 50px;
+  margin-top: 20px;
   font-family: 'avenir-book';
 }
 .products-con {
@@ -299,7 +110,7 @@
 .rose { background-color: #E1A4A9; }
 
 .prev{
-  left: 6vw;
+  left: 3vw;
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
@@ -311,7 +122,7 @@
   font-size: 30px;
 }
 .next{
-  right: 6vw;
+  right: 3vw;
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
@@ -321,6 +132,26 @@
   padding: 15px;
   cursor: pointer;
   font-size: 30px;
+}
+@media (max-width: 1100px) {
+  .products-con {
+    gap: 1.2rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .products {
+    max-width: 48vw;
+    min-width: 160px;
+    padding: 1rem 0.5rem 1.2rem 0.5rem;
+  }
+  .img {
+    max-width: 160px;
+  }
+  .prev{
+  left: 5px;
+}
+.next{
+  right: 5px;
+}
 }
 @media (max-width: 900px) {
   .products-con {
@@ -335,6 +166,12 @@
   .img {
     max-width: 160px;
   }
+  .prev{
+  left: 0px;
+}
+.next{
+  right: 0px;
+}
 }
 
 @media (max-width: 550px) {
@@ -344,11 +181,17 @@
     padding: 1rem 0.2rem;
   }
   .products {
-    max-width: 98vw;
+    max-width: 75vw;
     min-width: 0;
     padding: 0.8rem 0.2rem 1rem 0.2rem;
   }
   .img {
-    max-width: 95vw;
+    max-width: 75vw;
   }
+  .prev{
+  display: none;
+}
+.next{
+  display: none;
+}
 }

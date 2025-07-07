@@ -47,9 +47,6 @@ function App() {
         <h1>Product List</h1>
       </div>
 
-      {/* search bar field */}
-      <div className="search-bar"></div>
-
       {/* a product container to display products */}
       <div className="products-con" ref={containerRef}>
         {products.map((item, index) => {

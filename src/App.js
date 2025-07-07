@@ -3,17 +3,18 @@ import StarRating from "./components/starRating";
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
 import products from "./products.json";
-
+import GoldPrice from "./components/goldPrice";
 function App() {
+  // calculating current page width for scroll amount
   const containerRef = useRef(null); // ne icin kullanildigini anla
   const [productWidth, setProductWidth] = useState(0);
-
   useEffect(() => {
     if (containerRef.current && containerRef.current.firstChild) {
       setProductWidth(containerRef.current.firstChild.offsetWidth + 16);
     }
   }, [products]);
 
+  // function for the left button
   const scrollLeft = () => {
     containerRef.current.scrollBy({
       left: -productWidth - 20,
@@ -21,13 +22,14 @@ function App() {
     });
   };
 
+  // function for the right button
   const scrollRight = () => {
     containerRef.current.scrollBy({
       left: productWidth + 20,
       behavior: "smooth",
     });
   };
-
+  // setting selected color for color buttons
   const colorOptions = ["yellow", "white", "rose"];
   const [selected, setSelected] = useState({});
   const handleColorChange = (productIndex, color) => {
@@ -37,16 +39,21 @@ function App() {
     }));
   };
 
+  const goldPrice = GoldPrice();
   return (
     <div className="App">
       {/* the page title field */}
       <div className="title">
         <h1>Product List</h1>
       </div>
-      {/* a product container to displat products */}
+
+      {/* search bar field */}
+      <div className="search-bar"></div>
+
+      {/* a product container to display products */}
       <div className="products-con" ref={containerRef}>
         {products.map((item, index) => {
-          const price = (item.popularityScore + 1) * item.weight * 107.294; //popularity score + 1 * weight * price of gold in US
+          const price = (item.popularityScore + 1) * item.weight * goldPrice; //popularity score + 1 * weight * price of gold in US
           const selectedColor = selected[index] || "yellow";
           const imageSrc = item.images[selectedColor];
           return (
@@ -58,14 +65,7 @@ function App() {
                   alt={`${item.name} - ${selectedColor}`}
                 />
               </div>
-              <p
-                className="prdct-name"
-                style={{
-                  fontFamily: "",
-                }}
-              >
-                {item.name}
-              </p>
+              <p className="prdct-name">{item.name}</p>
 
               <p className="prdct-price">${price.toFixed(2)} USD</p>
 

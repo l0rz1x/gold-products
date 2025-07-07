@@ -16,14 +16,14 @@ function App() {
 
   const scrollLeft = () => {
     containerRef.current.scrollBy({
-      left: -productWidth * 1.36,
+      left: -productWidth - 20,
       behavior: "smooth",
     });
   };
 
   const scrollRight = () => {
     containerRef.current.scrollBy({
-      left: productWidth * 1.36,
+      left: productWidth + 20,
       behavior: "smooth",
     });
   };
@@ -76,13 +76,13 @@ function App() {
                     className={`color-btn ${color}`}
                     onClick={() => handleColorChange(index, color)}
                     style={{
-                      width: "20px",
-                      height: "20px",
+                      width: "25px",
+                      height: "25px",
                       borderRadius: "50%",
                       backgroundColor: color,
                       border:
                         (selected[index] || "yellow") === color
-                          ? "1px solid black"
+                          ? "2px solid black"
                           : "1px solid #ccc",
                       cursor: "pointer",
                       margin: "5px",

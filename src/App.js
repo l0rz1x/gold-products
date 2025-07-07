@@ -6,7 +6,7 @@ import products from "./products.json";
 import GoldPrice from "./components/goldPrice";
 function App() {
   // calculating current page width for scroll amount
-  const containerRef = useRef(null); // ne icin kullanildigini anla
+  const containerRef = useRef(null);
   const [productWidth, setProductWidth] = useState(0);
   useEffect(() => {
     if (containerRef.current && containerRef.current.firstChild) {
